@@ -15,8 +15,17 @@ type DataPoint struct {
 	label           int
 }
 
+type ImageFile struct {
+	FilePath string
+	Label    int
+}
+
 type Batch struct {
 	data []DataPoint
+}
+
+type IncBatch struct {
+	files []ImageFile
 }
 
 func NewDataPoint(inputs []float64, label, numLabels int) DataPoint {
@@ -58,8 +67,7 @@ func CreateMiniBatches(data []DataPoint, batchSize int) []Batch {
 	return batches
 }
 
-func SplitData(allData []DataPoint, trainingSplit float64) ([]DataPoint, []DataPoint) {
-
+func SplitData[T any](allData []T, trainingSplit float64) ([]T, []T) {
 	ShuffleBatches(allData)
 
 	totalLength := len(allData)

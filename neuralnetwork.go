@@ -114,10 +114,10 @@ func (nn *NeuralNetwork) CalculateOutputs(inputs []float64) []float64 {
 	return inputs
 }
 
-func (nn *NeuralNetwork) calculateTotalLoss(batch Batch) float64 {
+func (nn *NeuralNetwork) calculateTotalLoss(batch []DataPoint) float64 {
 	totalLoss := 0.0
 
-	for _, dataPoint := range batch.data {
+	for _, dataPoint := range batch {
 		_, outputs := nn.Classify(dataPoint.inputs)
 		loss := nn.Loss.LossFunction(outputs, dataPoint.expectedOutputs)
 		totalLoss += loss

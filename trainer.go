@@ -15,6 +15,10 @@ type Trainer struct {
 	trainingData    []DataPoint
 	validationData  []DataPoint
 	trainingBatches []Batch
+
+	incTrainingData    []ImageFile
+	incValidationData  []ImageFile
+	incTrainingBatches []IncBatch
 }
 
 type TrainerConf struct {
@@ -77,7 +81,7 @@ func (t *Trainer) Train() {
 			displayProgress(i, totalBatches)
 			t.NN.Learn(t.trainingBatches[i].data, currentRate, t.Config.Regularization, t.Config.Momentum)
 
-			epochLoss += t.NN.calculateTotalLoss(t.trainingBatches[i])
+			epochLoss += t.NN.calculateTotalLoss(t.trainingBatches[i].data)
 		}
 
 		evalutation := t.Eval(true)
