@@ -22,7 +22,7 @@ func (t *Trainer) LoadIncData(training, validation []ImageFile) {
 func (t *Trainer) IncTrain(numLabels int) {
 	println("[INFO] Started Incremental Training")
 	currentRate := t.Config.Rate
-	totalBatches := len(t.trainingBatches)
+	totalBatches := len(t.incTrainingBatches)
 
 	for epochIdx := 0; epochIdx < t.Config.Epochs; epochIdx++ {
 		epochLoss := 0.0
