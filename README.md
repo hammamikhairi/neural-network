@@ -30,7 +30,7 @@ Explore and interact with the handwritten digits classifier on [this web interfa
 You can get the library and test it locally by running :
 
 ```bash
-go get https://github.com/hammamikhairi/neural-network
+go get github.com/hammamikhairi/neural-network
 ```
 
 And you can view some examples [here](https://github.com/hammamikhairi/neural-network/tree/master/Examples)
