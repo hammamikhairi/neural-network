@@ -20,11 +20,17 @@ This is a neural network library written entirely in Golang, developed for perso
 - Sigmoid, ReLU, Softmax, TanH and SiLU activation functions
 - Cross-entropy, BinaryCrossEntropy and MeanSquareError loss functions
 
-<!--
+## Some more notes
+
+- The model takes around 500 microseconds to make a prediction on a single core.
+- You have the flexibility to customize the architecture of your neural network. You can specify the number of layers and the number of nodes in each layer to suit your specific needs.
+- You can load your own data into the model. See [this example](https://github.com/hammamikhairi/neural-network/blob/master/Examples/LoadCustomData.go).
+- This library is designed to be easily integrated into your own applications. Check out [this example](https://github.com/hammamikhairi/neural-network/blob/master/Examples/ServerIntergation.go).
+
 ## Web Interface
 
-Explore and interact with the handwritten digits classifier on [this web interface](s)!
--->
+Explore and interact with the handwritten digits classifier on [this web interface](https://hammamikhairi.github.io/nn-front/)!
+
 ## Usage
 
 You can get the library and test it locally by running :
