@@ -1,4 +1,4 @@
-package main
+package neuralnetwork
 
 type LayerLearnData struct {
 	inputs         []float64
